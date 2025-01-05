@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    let currentInput = "";
+
+    function addToDisplay(value) {
+        currentInput += value;
+        document.getElementById("display").textContent = currentInput;
+    }
+
+    function clear() {
+        currentInput = "";
+        document.getElementById("display").textContent = "0";
+    }
+
+    function Result() {
+        
+            currentInput = eval(currentInput).toString();
+            document.getElementById("display").textContent = currentInput;
+        
+    }
+</script>
+<style>
+    .button {
+        background-color: coral;
+        height: 45px;
+        width: 50px;
+        margin-left: 12px;
+    }
+
+    #calc_main {
+        background-color: #118083;
+        height: 480px;
+        width: 300px;
+        border-radius: 40px;
+        padding-top: 10px;
+    }
+
+    #textbox {
+        background-color: burlywood;
+        height: 120px;
+        width: 260px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    #display {
+        font-size: 30px;
+        font-family: 'Courier New', Courier, monospace;
+        padding: 10px;
+    }
+
+    table {
+        width: 100%;
+        text-align: center;
+    }
+</style>
+<body>
+<div id="calc_main">
+    <div id="textbox">
+        <div id="display">0</div>
+    </div>
+
+    <div style="align-items: center; display: flex; margin-left: auto; margin-right: auto; margin-top: 30px;">
+        <table>
+            <tr>
+                <td><input type="button" value="+" class="button" onclick="appendToDisplay('+')"></td>
+                <td><input type="button" value="-" class="button" onclick="appendToDisplay('-')"></td>
+                <td><input type="button" value="x" class="button" onclick="appendToDisplay('*')"></td>
+                <td><input type="button" value="/" class="button" onclick="appendToDisplay('/')"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="align-items: center; display: flex; margin-left: auto; margin-right: auto; margin-top: 30px;">
+        <table>
+            <tr>
+                <td><input type="button" value="1" class="button" onclick="appendToDisplay('1')"></td>
+                <td><input type="button" value="2" class="button" onclick="appendToDisplay('2')"></td>
+                <td><input type="button" value="3" class="button" onclick="appendToDisplay('3')"></td>
+                <td><input type="button" value="4" class="button" onclick="appendToDisplay('4')"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="align-items: center; display: flex; margin-left: auto; margin-right: auto; margin-top: 30px;">
+        <table>
+            <tr>
+                <td><input type="button" value="5" class="button" onclick="appendToDisplay('5')"></td>
+                <td><input type="button" value="6" class="button" onclick="appendToDisplay('6')"></td>
+                <td><input type="button" value="7" class="button" onclick="appendToDisplay('7')"></td>
+                <td><input type="button" value="8" class="button" onclick="appendToDisplay('8')"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="align-items: center; display: flex; margin-left: auto; margin-right: auto; margin-top: 30px;">
+        <table>
+            <tr>
+                <td><input type="button" value="9" class="button" onclick="appendToDisplay('9')"></td>
+                <td><input type="button" value="0" class="button" onclick="appendToDisplay('0')"></td>
+                <td><input type="button" value="AC" class="button" onclick="clear()"></td>
+                <td><input type="button" value="=" class="button" onclick="Result()"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>
